@@ -11,6 +11,7 @@
 
     <!-- Title Page-->
     <title> Register Form</title>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
     <!-- Icons font CSS-->
     <link href="../..//vendor1/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -34,7 +35,7 @@
                 <div class="card-heading"></div>
                 <div class="card-body">
                     <h2 class="title">Registration Info</h2>
-                    <form method="POST"  action="/register">
+                    <form method="POST"  action="/register" id="form1">
                         <div class="input-group">
                             <input class="input--style-3" type="text" placeholder="FullName" name="name" required>
                         </div>
@@ -57,7 +58,7 @@
                             <input class="input--style-3" type="text" placeholder="UserName" name="userName" required>
                         </div>
                         <div class="input-group">
-                            <input class="input--style-3" type="email" placeholder="Email" name="email" required>
+                            <input class="input--style-3" type="email" placeholder="Email"  id="to" name="email" required>
                         </div>
                         <div class="input-group">
                             <input class="input--style-3" type="password" placeholder="Passowrd" minlength="8" name="passowrd" required>
@@ -76,9 +77,9 @@
                                 <div class="select-dropdown"></div>
                             </div>
                         </div>
-                        
-                        <div class="p-t-10">
-                            <button class="btn btn--pill btn--green" type="submit">Submit</button>
+                        <div class="g-recaptcha" data-sitekey="6LeB3KkUAAAAAD2BSKPf6nFhjfLzgEQV_DQAfKz6
+      "></div><br>                        <div class="p-t-10">
+                            <button class="btn btn--pill btn--green" type="submit" name="submit" id="send_email" >Submit</button>
                         </div>
                     </form>
                 </div>
@@ -87,6 +88,8 @@
     </div>
 
     <!-- Jquery JS-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
     <script src="../..//vendor1/jquery/jquery.min.js"></script>
     <!-- vendor1 JS-->
     <script src="../..//vendor1/select2/select2.min.js"></script>
@@ -95,7 +98,39 @@
 
     <!-- Main JS-->
     <script src="../..//js/global.js"></script>
+    
+  <script>
+    $(document).ready(function() {
+      $('#form1').submit(function() {
+        $(this).ajaxSubmit({
+          error: function(xhr) {
+            status('Error: ' + xhr.status);
+          },
+         success: function(response) {
+          console.log(response);
+         }
+        });
+        //Very important line, it disable the page refresh.
+        return false;
+      });
+    });
+  </script>
+  <script>
+  $(document).ready(function(){
+    var from,to,subject,text;
+    $("#send_email").click(function(){      
+        to=$("#to").val();      
+        $("#message").text("Sending E-mail...Please wait");
+        $.get("http://localhost:4000/register",{to:email},function(data){
+        if(data=="sent")
+        {
+            $("#message").empty().html("<p>Email is been sent at "+to+" . Please check inbox !</p>");
+        }
 
+});
+    });
+})
+</script>
 </body>
 
 </html>

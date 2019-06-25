@@ -27,7 +27,7 @@ res.send(req.body)
 })
 
 
-app.use('/register', registerRouter);
+app.use('/register', registerRouter.router);
 app.use('/signin', siginRouter);
 
 app.use('/users', usersRouter);

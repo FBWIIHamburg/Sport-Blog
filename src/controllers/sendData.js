@@ -8,7 +8,7 @@ dbname = "blog";
 const conf = require('../routes/mongoConfig')
 
 function addUser(name, birthDate, gender, userName, email,
-    passowrd, favoriteClub,callback, photos, admin, activ, verfied) {
+    passowrd, favoriteClub,callback, photos) {
     (async function mongo() {
         let client;
         try {
@@ -30,10 +30,11 @@ function addUser(name, birthDate, gender, userName, email,
                     email: email,
                     passowrd: passowrd,
                     favoriteClub: favoriteClub,
-                    photos: photos,
+                     photos: photos,
+                    verNum: Math.floor((Math.random() * 100) + 54*5555+80*0975436789),
                     admin: false,
                     verfied: false,
-                    
+                    active:false,
 
 
                 })
@@ -43,7 +44,8 @@ function addUser(name, birthDate, gender, userName, email,
             }
         } catch (error) {
             console.log(error.message);
-            client.close();
+          //  client.close();
+
             callback(false)
         }
     }())
