@@ -2,14 +2,14 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const port =process.env.PORT||3000
-const indexRouter = require('./src/routes/index');
+const port =process.env.PORT||5000
+const indexRouter = require('./src/routes/index.js');
 const usersRouter = require('./src/routes/users');
 
 const app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '/src/views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
