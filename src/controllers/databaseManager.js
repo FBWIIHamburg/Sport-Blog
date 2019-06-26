@@ -13,7 +13,7 @@ const MongoClient = require('mongodb').MongoClient;
  * @param {*} val as an Object
  * @param {*} callback Calling back Function
  */
-const check = function (serverDbUrl, dbName, colName, val, callback) {
+function check (serverDbUrl, dbName, colName, val, callback) {
     // asynic Function to make a connection to the Database
     (async function () {
         try {
@@ -30,14 +30,7 @@ const check = function (serverDbUrl, dbName, colName, val, callback) {
             Client.close(); //closeing the Connection
             //check the response
             if (response) {
-                //check if the response error When error the response.message is exist then return the error message
-                if (response.message) {
-                    //callingback the error message
-                    callback(response)
-                } else {
-                    // no error but the response in not empty thats mean the user or value exist
-                    callback(response);
-                }
+                callback(response)
             } else {
                 callback(false);
             }
@@ -57,7 +50,8 @@ const check = function (serverDbUrl, dbName, colName, val, callback) {
  * @param {*} val as an Object
  * @param {*} callback Calling back Function
  */
-const insertToDb = function (serverDbUrl, dbName, colName, val, callback) {
+ 
+ function insertToDb (serverDbUrl, dbName, colName, val, callback) {
     // asynic Function to make a connection to the Database
     (async function () {
         try {
@@ -75,13 +69,7 @@ const insertToDb = function (serverDbUrl, dbName, colName, val, callback) {
             //check the response
             if (response) {
                 //check if the response error When error the response.message is exist then return the error message
-                if (response.message) {
-                    //callingback the error message
-                    callback(response)
-                } else {
-                    // no error but the response in not empty thats mean the user or value exist
-                    callback(true);
-                }
+                callback(response)
             } else {
                 callback(false);
             }

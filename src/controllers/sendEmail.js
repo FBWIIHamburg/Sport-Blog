@@ -6,7 +6,7 @@ const DOMAIN = "sandboxda85dfdc822a49429a930a0e2bed9ccf.mailgun.org";
 const mg = mailgun({ apiKey: APIkey, domain: DOMAIN });
 const config = require('../routes/mongoConfig')
 const dburl = config.configMongoURI
-const getVerNum = function (req, callback) {
+let getVerNum = function (req, callback) {
     databaseManger.check(dburl, config.dbname, config.collectionName, {
         userName: req.name,
     }, (response) => {
@@ -21,7 +21,7 @@ const getVerNum = function (req, callback) {
         }
     })
 }
-const sendEmail = function (req, callback1) {
+  function sendEmail (req, callback1) {
 let rand;
 getVerNum(req,(verNum)=>{
 if(verNum){
@@ -37,7 +37,7 @@ link="http://"+req.get('host')+"/signin?id="+rand;
 mailOptions={
     from: ' brad@sandboxda85dfdc822a49429a930a0e2bed9ccf.mailgun.org',
     to : req.body.email,
-    subject : "EEmail Verfiying",
+    subject : "Email Verfiying",
     html : "Hello,<br> Please Click on the link to verify your email.<br><a href="+link+">Click here to verify</a>" 
 }
 console.log(mailOptions);
