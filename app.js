@@ -7,7 +7,7 @@ const indexRouter = require('./src/routes/index');
 const usersRouter = require('./src/routes/users');
 const registerRouter = require('./src/routes/register');
 const siginRouter = require('./src/routes/signin');
-
+const verificationRouter=require('./src/controllers/verification')
 
 const app = express();
 
@@ -27,8 +27,10 @@ res.send(req.body)
 })
 
 
-app.use('/register', registerRouter.router);
+app.use('/register', registerRouter);
 app.use('/signin', siginRouter);
+app.use('/verification', verificationRouter);
+
 
 app.use('/users', usersRouter);
 app.listen(port, () => {

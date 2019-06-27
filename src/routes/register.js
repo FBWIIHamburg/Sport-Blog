@@ -25,7 +25,7 @@ router.route('/').post((req, res) => {
         userName: req.userName
       }, (response) => {
         if (response) {
-      
+
           console.log("User name Used Use other ")
           callback(response)
         } else {
@@ -45,6 +45,8 @@ router.route('/').post((req, res) => {
                 } else if (!ok) {
                   res.send("email error ")
                 } else {
+                  //Done evrything
+                  //i should render home page with aler message to verifye email 
                   res.send("ok");
                 }
               })
@@ -52,22 +54,24 @@ router.route('/').post((req, res) => {
               console.log("#############Not Done insert Data")
               res.send(satatus)
             }
-      
-      
+
+
           })
-      
-      
+
+
         }
-      
+
       })
     } else {
       res.send("am a robot")
     }
   })
-
-
-
-
-
 })
-module.exports = { router }
+ 
+
+
+
+
+
+
+module.exports = router 
