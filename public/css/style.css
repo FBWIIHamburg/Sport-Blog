@@ -317,10 +317,10 @@ a {
 .header_area.navbar_fixed .main_menu {
       position: fixed;
       width: 100%;
-      top: -70px;
+      top: -72px;
       left: 0;
       right: 0;
-      background: #dddd;
+      background: #ffffffe8;
       z-index: 99;
       transform: translateY(70px);
       transition: transform 500ms ease, background 500ms ease;
@@ -435,9 +435,9 @@ a {
       }
 
       .header_area .navbar {
-            background: #000
+            background: #fff
       }
-
+     
       .navbar-toggler[aria-expanded="false"] span:nth-child(2) {
             opacity: 1
       }
@@ -462,7 +462,7 @@ a {
             display: block;
             width: 25px;
             height: 3px;
-            background: #fff;
+            background: #000;
             margin: auto;
             margin-bottom: 4px;
             transition: all 400ms linear;
@@ -786,12 +786,12 @@ a {
 }
 
 .hero-banner {
-      background: url(../img/cover-gen.png) left center no-repeat;
+      background: url(../img/header/cover-gen.png) left center no-repeat;
       filter: blur(2px);
       -webkit-filter: blur(2px);
       background-size: cover;
       height: 400px;
-      z-index: 1
+      z-index: 1;
 }
 
 @media (min-width: 1000px) {
@@ -906,7 +906,7 @@ a {
       font-size: 13px;
       background: #8CC444 !important;
       text-transform: uppercase;
-      color: #222;
+      color: #222 !important;
       padding: 4px 40px;
       margin-bottom: 18px
 }

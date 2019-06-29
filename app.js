@@ -5,6 +5,8 @@ const logger = require('morgan');
 const port =process.env.PORT||5000
 const indexRouter = require('./src/routes/index.js');
 const usersRouter = require('./src/routes/users');
+const registerRouter = require('./src/routes/register');
+const siginRouter = require('./src/routes/signin');
 
 const app = express();
 
@@ -19,7 +21,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/register', registerRouter.router);
+app.use('/login', siginRouter);
 app.listen(port, () => {
   console.log(`App listening on port ${port}!`);
 });
