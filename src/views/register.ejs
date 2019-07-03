@@ -35,7 +35,7 @@
                 <div class="card-heading"></div>
                 <div class="card-body">
                     <h2 class="title">Registration Info</h2>
-                    <form method="POST"  action="/register" id="form1">
+                    <form method="POST"  action="/register" id="form1" data-parsley-validate="">
                         <div class="input-group">
                             <input class="input--style-3" type="text" placeholder="FullName" name="name" required>
                         </div>
@@ -61,10 +61,10 @@
                             <input class="input--style-3" type="email" placeholder="Email"  id="to" name="email" required>
                         </div>
                         <div class="input-group">
-                            <input class="input--style-3" type="password" placeholder="Passowrd" minlength="8" name="passowrd" required>
+                            <input class="input--style-3" type="password" placeholder="Passowrd" minlength="8" name="passowrd" id="passowrd" required>
                         </div>
                         <div class="input-group">
-                            <input class="input--style-3" type="password" placeholder="Repassowrd" name="repassword" minlength="8" required>
+                            <input class="input--style-3" type="password" placeholder="Repassowrd" data-parsley-equalto="#passowrd" name="repassword" minlength="8" required>
                         </div>
                         <div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
@@ -98,6 +98,8 @@
 
     <!-- Main JS-->
     <script src="../..//js/global.js"></script>
+        <script src="../..//js/parsley.min.js"></script>
+
     
   <script>
     $(document).ready(function() {
@@ -118,7 +120,8 @@
   <script>
   $(document).ready(function(){
     var from,to,subject,text;
-    $("#send_email").click(function(){      
+    $("#send_email").click(function(){    
+         $('#form1').parsley().validate()  
         to=$("#to").val();      
         $("#message").text("Sending E-mail...Please wait");
         $.get("http://localhost:4000/register",{to:email},function(data){
@@ -129,6 +132,16 @@
 
 });
     });
+//     $(function () {
+//  .on('field:validated', function() {
+//     var ok = $('.parsley-error').length === 0;
+//     $('.bs-callout-info').toggleClass('hidden', !ok);
+//     $('.bs-callout-warning').toggleClass('hidden', ok);
+//   })
+//   .on('form:submit', function() {
+//     return false; // Don't submit form for this demo
+//   });
+//  });
 })
 </script>
 </body>
