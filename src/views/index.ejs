@@ -1,11 +1,357 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sport Blog - Home</title>
+	<link rel="icon" href="img/logos/home-loge.jpeg" type="image/png">
+
+  <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="vendors/themify-icons/themify-icons.css">
+  <link rel="stylesheet" href="vendors/linericon/style.css">
+  <link rel="stylesheet" href="vendors/owl-carousel/owl.theme.default.min.css">
+  <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!--================Header Menu Area =================-->
+
+  <%- include('./partial/nav.ejs')%>
+  <!--================Header Menu Area =================-->
+  
+  <main class="site-main">
+    <!--================Hero Banner start =================-->  
+    <section class="mb-30px">
+      <div class="container" style="
+      position: relative" >
+        <div class="hero-banner">
+        </div>
+        <div class="hero-banner__content">
+          <h3>Sport Blog</h3>
+          <h1>Soccer for Life</h1>
+          <h4>Our Blog for Football Fans</h4>
+        </div>
+      </div>
+    </section>
+    <!--================Hero Banner end =================-->  
+
+    <!--================ Blog slider start =================-->  
+    <section>
+      <div class="container">
+        <div class="owl-carousel owl-theme blog-slider">
+
+          <div class="card blog__slide text-center">
+            <div class="blog__slide__img">
+              <img class="card-img rounded-0" src="img/blog/blog-slider/messi-1.jpg" alt="">
+            </div>
+            <div class="blog__slide__content">
+              <a class="blog__slide__label" style="font-size: 12px; pointer-events: none;cursor: default; color: black;">Barcelona,&nbsp; player,&nbsp; Messi</a>
+              <h3><a href="#">Messi salvages point for Argentina as they keep Copa America hopes alive</a></h3>
+              <p>2 days ago</p>
+            </div>
+          </div>
+
+          <div class="card blog__slide text-center">
+            <div class="blog__slide__img">
+              <img class="card-img rounded-0" src="img/blog/blog-slider/mendy-1.jpg" alt="">
+            </div>
+            <div class="blog__slide__content">
+              <a class="blog__slide__label" style="font-size: 12px; pointer-events: none;cursor: default; color: black;">Real Madrid, &nbsp;Player, &nbsp;Mendy, &nbsp;Mercato2019</a>
+              <h3><a href="#">Ferland Mendy: 'I was in a wheelchair, now I'm at Real Madrid'</a></h3>
+              <p>19 June 2019</p>
+            </div>
+          </div>
+
+          <div class="card blog__slide text-center">
+            <div class="blog__slide__img">
+              <img class="card-img rounded-0" src="img/blog/blog-slider/enrik-1.jpg" alt="">
+            </div>
+            <div class="blog__slide__content">
+              <a class="blog__slide__label" style="font-size: 12px; pointer-events: none;cursor: default; color: black;">Luis Enrique, &nbsp;Trainer, &nbsp;Spain</a>
+              <h3><a href="#">Luis Enrique: Spain manager quits after 11 months</a></h3>
+              <p>19 June 2019</p>
+            </div>
+          </div>
+
+          <div class="card blog__slide text-center">
+            <div class="blog__slide__img">
+              <img class="card-img rounded-0" src="img/blog/blog-slider/pogba-1.jpg" alt="">
+            </div>
+            <div class="blog__slide__content">
+              <a class="blog__slide__label" style="font-size: 12px; pointer-events: none;cursor: default; color: black;">Manchester United , &nbsp;Player, &nbsp;Pogba</a>
+              <h3><a href="#">Paul Pogba: Man Utd's dilemma - should they sell or keep midfielder?</a></h3>
+              <p>17 June 2019</p>
+            </div>
+          </div>
+
+          <div class="card blog__slide text-center">
+            <div class="blog__slide__img">
+              <img class="card-img rounded-0" src="img/blog/blog-slider/hazard-1.jpg" alt="">
+            </div>
+            <div class="blog__slide__content">
+              <a class="blog__slide__label" style="font-size: 12px; pointer-events: none;cursor: default; color: black;">Real Madrid, &nbsp;Player, &nbsp;Eden Hazard, &nbsp;Mercato2019</a>
+              <h3><a href="#">Real Madrid present Hazard at the Bernabeu</a></h3>
+              <p>2 days ago</p>
+            </div>
+          </div>
+
+          <div class="card blog__slide text-center">
+            <div class="blog__slide__img">
+              <img class="card-img rounded-0" src="img/blog/blog-slider/nemar-1.jpg" alt="">
+            </div>
+            <div class="blog__slide__content">
+              <a class="blog__slide__label" style="font-size: 12px; pointer-events: none;cursor: default; color: black;">Paris St-Germain, &nbsp;Player, &nbsp;Neymar, &nbsp;Barcelona</a>
+              <h3><a href="#">Neymar and Paris St-Germain: What next for world's most expensive footballer?</a></h3>
+              <p>22 June 2019</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!--================ Blog slider end =================-->  
+
+    <!--================ Start Blog Post Area =================-->
+    <section class="blog-post-area section-margin mt-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="single-recent-blog-post">
+              <div class="thumb">
+                <img class="img-fluid" src="img/blog/blog.jpg" alt="">
+                <ul class="thumb-info">
+                  <li><a href="#"  style="font-size: 12px; pointer-events: none;cursor: default; color: black;"><i class="ti-user" ></i>Admin</a></li>
+                  <li><a href="#" style="font-size: 12px; pointer-events: none;cursor: default; color: black;"><i class="ti-notepad"></i>June 21,2019</a></li>
+                  <li><a href="#" style="font-size: 12px; pointer-events: none;cursor: default; color: black;"><i class="ti-themify-favicon"></i>17</a></li>
+                </ul>
+              </div>
+              <div class="details mt-20">
+                <a href="/register" >
+                  <h3>Barcelona reserves put £89.2m release clause on new signing Mike van Beijnen</h3>
+                </a>
+                <p class="tag-list-inline">Tag: <a href="#">Barcelona</a>, <a href="#">Player</a>, <a href="#">Mercato2019</a>, <a href="#">Mike van Beijnen</a></p>
+                <p>Barcelona's reserve team have put a 100m euro (£89.2m) release clause on their new signing Mike van Beijnen.
+
+                    Dutch right-back Van Beijnen, 20, who has played for NAC Breda, PSV Eindhoven and Willem II, has signed a two-year deal with Barcelona B.
+                    </p>
+                <a class="button" href="/register">Read More <i class="ti-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <div class="single-recent-blog-post">
+              <div class="thumb">
+                <img class="img-fluid" src="img/blog/blog1.jpg" alt="">
+                <ul class="thumb-info">
+                    <li><a href="#"  style="font-size: 12px; pointer-events: none;cursor: default; color: black;"><i class="ti-user" ></i>Admin</a></li>
+                    <li><a href="#" style="font-size: 12px; pointer-events: none;cursor: default; color: black;"><i class="ti-notepad"></i>June 21,2019</a></li>
+                    <li><a href="#" style="font-size: 12px; pointer-events: none;cursor: default; color: black;"><i class="ti-themify-favicon"></i>7</a></li>
+                  </ul>
+              </div>
+              <div class="details mt-20">
+                <a href="blog-single.html">
+                  <h3>Marcos Llorente: Atletico Madrid sign defensive midfielder from Real Madrid</h3>
+                </a>
+                <p class="tag-list-inline">Tag: <a href="#">Real Madrid</a>, <a href="#">Atletico Madrid</a>, <a href="#">Liorente</a>, <a href="#">Mercato2019</a></p>
+                <p>Atletico Madrid have signed defensive midfielder Marcos Llorente from rivals Real Madrid on a five-year deal.
+
+                    The Spaniard, 24, who joined Real in 2008, made his senior debut in 2015 before a season on loan at Alaves.
+                    
+                    Llorente, a 2018 Champions League winner, has scored twice in 39 games for Real's first team, including 16 appearances last season.</p>
+                <a class="button" href="/register">Read More <i class="ti-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <div class="single-recent-blog-post">
+              <div class="thumb">
+                <img class="img-fluid" src="img/blog/blog2.jpg" alt="">
+                <ul class="thumb-info">
+                    <li><a href="#"  style="font-size: 12px; pointer-events: none;cursor: default; color: black;"><i class="ti-user" ></i>Admin</a></li>
+                    <li><a href="#" style="font-size: 12px; pointer-events: none;cursor: default; color: black;"><i class="ti-notepad"></i>May 26,2019</a></li>
+                    <li><a href="#" style="font-size: 12px; pointer-events: none;cursor: default; color: black;"><i class="ti-themify-favicon"></i>3 </a></li>
+                  </ul>
+              </div>
+              <div class="details mt-20">
+                <a href="blog-single.html">
+                  <h3>Joao Felix: The Benfica wonderkid who has been called the most exciting player since Cristiano Ronaldo </h3>
+                </a>
+                <p class="tag-list-inline">Tag: <a href="#">Player</a>, <a href="#">Joao Felix</a>, <a href="#">Benfica</a>, <a href="#">Portuguese footballers</a></p>
+                <p>Joao Felix is the most in demand teenager in Europe and at 19 years old comes with a 120m euro (£106m) price tag.
+
+                    The Portuguese forward only made his senior debut for Benfica at the start of the season but has gone on to score 15 goals and register nine assists in the Primeira Liga as his club won the title.
+                    
+                    He scored a hat-trick against Eintracht Frankfurt in the Europa League in April, becoming the youngest Benfica player and the youngest Portuguese footballer to score three goals in Europe and the youngest player ever to do so in the competition.</p>
+                <a class="button" href="/register">Read More <i class="ti-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <div class="single-recent-blog-post">
+              <div class="thumb">
+                <img class="img-fluid" src="img/blog/blog3.jpg" alt="">
+                <ul class="thumb-info">
+                    <li><a href="#"  style="font-size: 12px; pointer-events: none;cursor: default; color: black;"><i class="ti-user" ></i>Admin</a></li>
+                    <li><a href="#" style="font-size: 12px; pointer-events: none;cursor: default; color: black;"><i class="ti-notepad"></i>June 20,2019</a></li>
+                    <li><a href="#" style="font-size: 12px; pointer-events: none;cursor: default; color: black;"><i class="ti-themify-favicon"></i>10</a></li>
+                  </ul>
+              </div>
+              <div class="details mt-20">
+                <a href="blog-single.html">
+                  <h3>Erik ten Hag: Ajax boss signs new contract to 2022 </h3>
+                </a>
+                <p class="tag-list-inline">Tag: <a href="#">Ajax</a>, <a href="#">Erik ten Hag</a>, <a href="#">Trainer</a>, <a href="#">Champions League </a></p>
+                <p>Ten Hag, appointed in December 2017, secured Ajax's first Eredivisie title since 2014 in his debut full season.
+
+                    The 49-year-old's side knocked then-holders Real Madrid and Juventus out of the Champions League before semi-final defeat by Tottenham.
+                    
+                    "We have had a fantastic year and now want to expand on this," Ten Hag said.</p>
+                <a class="button" href="/register">Read More <i class="ti-arrow-right"></i></a>
+              </div>
+            </div>
+
+            
+
+
+          </div>
+
+          <!-- Start Blog Post Siddebar -->
+          <div class="col-lg-4 sidebar-widgets">
+              <div class="widget-wrap">
+                
+
+
+                <div class="single-sidebar-widget post-category-widget">
+                  <h4 class="single-sidebar-widget__title">Catgory</h4>
+                  <ul class="cat-list mt-20">
+                    <li>
+                      <a href="/register" class="d-flex justify-content-between">
+                        <p>Barcelona</p>
+                        <p>(03)</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/register" class="d-flex justify-content-between">
+                        <p>Champions League </p>
+                        <p>(09)</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/register" class="d-flex justify-content-between">
+                        <p>La Liga</p>
+                        <p>(12)</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/register" class="d-flex justify-content-between">
+                        <p>Real Madrid</p>
+                        <p>(02)</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/register" class="d-flex justify-content-between">
+                        <p>Mercato2019</p>
+                        <p>(10)</p>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="single-sidebar-widget popular-post-widget">
+                  <h4 class="single-sidebar-widget__title">Popular Post</h4>
+                  <div class="popular-post-list">
+                    <div class="single-post-list">
+                      <div class="thumb">
+                        <img class="card-img rounded-0" src="img/blog/thumb/thumb1.jpg" alt="">
+                        <ul class="thumb-info">
+                          <li><a href="/register">Adam Colinge</a></li>
+                          <li><a href="/register">June 15</a></li>
+                        </ul>
+                      </div>
+                      <div class="details mt-20">
+                        <a href="/register">
+                          <h6>Gerard Pique and FC Andorra: Why Barcelona defender bought a fifth-tier Spanish team</h6>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="single-post-list">
+                      <div class="thumb">
+                        <img class="card-img rounded-0" src="img/blog/thumb/thumb2.jpg" alt="">
+                        <ul class="thumb-info">
+                          <li><a href="/register">Adam Colinge</a></li>
+                          <li><a href="/register">June 20</a></li>
+                        </ul>
+                      </div>
+                      <div class="details mt-20">
+                        <a href="/register">
+                          <h6>Are Barcelona heading for summer of upheaval after cup disappointments?</h6>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="single-post-list">
+                      <div class="thumb">
+                        <img class="card-img rounded-0" src="img/blog/thumb/thumb3.jpg" alt="">
+                        <ul class="thumb-info">
+                          <li><a href="/register">Adam Colinge</a></li>
+                          <li><a href="/register">June 22</a></li>
+                        </ul>
+                      </div>
+                      <div class="details mt-20">
+                        <a href="/register">
+                          <h6>Chelsea 4-1 Arsenal: The weird and wonderful Europa League final</h6>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                  <div class="single-sidebar-widget tag_cloud_widget">
+                    <h4 class="single-sidebar-widget__title">Popular Post</h4>
+                    <ul class="list">
+                      <li>
+                          <a href="/register">Mercato2019</a>
+                      </li>
+                      <li>
+                          <a href="/register">Champions League</a>
+                      </li>
+                      <li>
+                          <a href="/register">From the sectionCeltic</a>
+                      </li>
+                      <li>
+                          <a href="/register">Premier League</a>
+                      </li>
+                      <li>
+                          <a href="/register">From the sectionEuropean Football</a>
+                      </li>
+                      <li>
+                          <a href="/register">La Liga</a>
+                      </li>
+                      <li>
+                          <a href="/register">Real Madrid</a>
+                      </li>
+                      <li>
+                          <a href="/register">Barcelona</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <!-- End Blog Post Siddebar -->
+        </div>
+    </section>
+    <!--================ End Blog Post Area =================-->
+  </main>
+
+  <!--================ Start Footer Area =================-->
+  <%- include('./partial/footer.ejs')%>
+  <!--================ End Footer Area =================-->
+
+  <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
+  <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script src="js/jquery.ajaxchimp.min.js"></script>
+  <script src="js/mail-script.js"></script>
+  <script src="js/main.js"></script>
+</body>
 </html>
