@@ -866,6 +866,13 @@ a {
       left: -12px
 }
 
+.toolbar {
+      padding: 1rem; 
+      border: solid 1px #aaa;
+      cursor: pointer;
+      font-size: 1.6rem;
+    }
+
 @media (min-width: 1250px) {
       .blog-slider .blog-slider__leftArrow {
             left: -105px;

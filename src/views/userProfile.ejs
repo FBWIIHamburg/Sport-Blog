@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><%= favClub.club %> Blog - Home</title>
+	<link rel="icon" href="/<%= favClub.logo %>" type="image/png" style="height: 100px;">
+
+  <link rel="stylesheet" href="/vendors/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="/vendors/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="/vendors/themify-icons/themify-icons.css">
+  <link rel="stylesheet" href="/vendors/linericon/style.css">
+  <link rel="stylesheet" href="/vendors/owl-carousel/owl.theme.default.min.css">
+  <link rel="stylesheet" href="/vendors/owl-carousel/owl.carousel.min.css">
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!--================Header Menu Area =================-->
+
+  <header class="header_area">
+            <div class="main_menu">
+              <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container box_1620">
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <a class="navbar-brand logo_h" href="/loged<%= favClub.navPath %>/home/<%= myUser.userName%>"><img src="/<%= favClub.logo %>" alt="" style="height: 100px;"></a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" ']]'''aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div class="collapse navbar-collapse " id="navbarSupportedContent" style="position: relative;">
+                    <ul class="nav navbar-nav menu_nav justify-content-center">
+                      <li class="<%= clubclass %>nav-item"><a class="nav-link" href="/loged<%= favClub.navPath %>/home/<%= myUser.userName%>">Your CLub</a></li> 
+                      <li class="<%= clubclass %>nav-item"><a class="nav-link" href="/loged<%= favClub.navPath %>/blogs/<%= myUser.userName%>">Blogs</a></li>
+                      <li class="<%= clubclass %>nav-item"><a class="nav-link" href="/loged<%= favClub.navPath %>/archive/<%= myUser.userName%>">Team</a></li>
+                      <li class="<%= clubclass %>nav-item"><a class="nav-link" href="/loged<%= favClub.navPath %>/contact/<%= myUser.userName%>">Contact</a></li>
+                    </ul>
+        
+                    <ul class=" nav navbar-nav navbar-right navbar-social center" style="right: 1rem;position: absolute;">
+                      <li><a href="#"><i class="ti-facebook "></i></a></li>
+                      <li><a href="#"><i class="ti-twitter-alt "></i></a></li>
+                      <li><a href="#"><i class="ti-instagram "></i></a></li>
+                      <li><a href="#"><i class="ti-skype "></i></a></li>
+                    </ul>
+        
+                    <span class="nav-item" style="z-index: 1000;"><a class="<%= clubclass %>blog__slide__label " href="/loged/users<%= favClub.navPath %>/profile/<%= myUser.userName%>"><%= myUser.userName%></a></span>
+        
+                  </div> 
+                </div>
+              </nav>
+            </div>
+          </header>
+          <main class="site-main">
+              <!--================Hero Banner start =================-->  
+    <!--================Hero Banner end =================-->  
+
+    <div class="container">
+            <div class="col-md-12">
+              <div class="profile-container">
+                <div class="profile-header row">
+                  <div class="col-12" style="width: 100%; height: 20rem; background-color: <%= favClub.color %> ; z-index: 1"></div>
+
+                  <div class="col-md-12 row" style="position: relative; height: 10rem;">
+                    <label for="profile-img" class="header-avatar" style=" background: url('/img/user-profile/profileImg.svg'); background-size: cover;">
+                      <img src="/<%= favClub.imgfilter%>" alt="" style="    width: 100%;height: 100%;border-radius: 50%; text-align: center; cursor: pointer" >
+                    </label>
+
+                    <input type="file" id="profile-img" name="profile-img" class="form-control">
+                        <h2 class="header-fullname " ><%= myUser.name%></h2>  
+<br>
+                        <p class="header-information " style="display: inline-block">
+                          <%= myUser.description%>
+                          </p> 
+                          
+                  </div>
+
+                  <div class="col-md-12 row" style="position: relative; ;">
+                    <div class="col-6 text-center"><a class="btn btn-palegreen btn-sm pull-right btn-follow " id='addP' style="color: #fff;">
+                      <i class="fa fa-plus-circle"></i> &nbsp;&nbsp; Add a New Post
+                      </a></div>
+                      <div class="col-6 text-center"><a href="" class="btn btn-palegreen btn-sm pull-right btn-follow " id="editProfile" style="color: #fff;">
+                        <i class="fas fa-user-edit"></i> &nbsp;&nbsp; Edit Your Profile
+                        </a></div>
+                  </div>
+
+                  <form method="POST" action="/admin/addAdv" class="p-5 bg-white" id="addPost" style="display: none" enctype="multipart/form-data"
+                  style="z-index: 3000;">
+                  <div class="row form-group">
+    
+                    <div class="col-md-12 ">
+                      <h1 style="text-align: center;"> New Blog</h1>
+                    </div>
+      
+                  </div>
+    
+                  <br>
+                  <div class="row form-group" >
+    
+                    <div class="col-md-12">
+                      <label class="text-black" for="photo">Choose your photos and upload it <br>
+                        <i class="fas fa-upload" style="cursor: pointer; font-size: 2rem; padding: 1rem;"></i>
+                      </label>
+                      <input type="file" id="photo" name="photo" class="form-control" multiple>
+                    </div>
+    
+    
+                    <div class="col-md-12">
+                      <label class="text-black" for="title">Blog Title Title</label>
+                      <input type="text" id="title" name="adTitle" class="form-control" placeholder="Write the Title here">
+                    </div>
+    
+                    <div class="col-md-12">
+                      <label class="text-black" for="club">The Club-Name<br>
+                      </label>
+                      <input type="text" id="club" name="keyword" class="form-control" placeholder="Write the Club Name">
+                    </div>
+    
+                    <div class="col-md-12">
+                      <label class="text-black" for="category">The Category</label>
+                      <p style="float: right; margin-bottom: -5px; color: #30e3ca; cursor: pointer;" id="edit">Edit</p>
+                    </div>
+    
+                    <div class="col-md-12">
+                      <select type="text" id="category" name="category" class="form-control">
+                        <option value="hi"></option>
+                      </select>
+                    </div>
+    
+    
+                    <div class="col-md-12" style="position: relative; display: none" id="addCategory">
+                      <label class="text-black" for="addQ">Add Category<br></label>
+                      <input type="text" id="addQ" name="writeQ" class="form-control" placeholder="add a new Category"
+                        form="categoryForm">
+                      
+                    </div>
+    
+    
+                    <div class="col-md-12">
+                      <label class="text-black" for="description">The Blog content</label>
+                      <textarea type="text" id="description" name="description" class="form-control"
+                        style="min-height: 200px;" placeholder="Write Your Blog"></textarea>
+                    </div>
+    
+                    <br>
+                    <br>
+         
+                  </div>
+                  <div class="col-md-12">
+                    <span class="nav-item" style="z-index: 1000;"><a class="<%= clubclass %>blog__slide__label " href="">Post</a></span>
+                  </div>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <div class="row form-group">
+                    <div class="col-12">
+                      <pre>Do you have a problem? <a href="/" style="color: '<%= favClub.color %>';">  Contact the customer service</a></pre>
+                    </div>
+                  </div>
+                </form>
+              
+                   
+
+
+
+                    
+                    <!-- <div class="row">
+                      <div class="col-md-4 col-sm-4 col-xs-12 stats-col">
+                        <div class="stats-value pink">284</div>
+                        <div class="stats-title">FOLLOWING</div>
+                      </div>
+                      <div class="col-md-4 col-sm-4 col-xs-12 stats-col">
+                        <div class="stats-value pink">803</div>
+                        <div class="stats-title">FOLLOWERS</div>
+                      </div>
+                      <div class="col-md-4 col-sm-4 col-xs-12 stats-col">
+                        <div class="stats-value pink">1207</div>
+                        <div class="stats-title">POSTS</div>
+                      </div>
+                    </div> -->
+                    
+                    <!-- <div class="row">
+                      <div class="col-md-4 col-sm-4 col-xs-4 inlinestats-col">
+                        <i class="glyphicon glyphicon-map-marker"></i> Boston
+                      </div>
+                      <div class="col-md-4 col-sm-4 col-xs-4 inlinestats-col">
+                        Rate: <strong>$250</strong>
+                      </div>
+                      <div class="col-md-4 col-sm-4 col-xs-4 inlinestats-col">
+                        Age: <strong>24</strong>
+                      </div>
+                    </div> -->
+
+
+                 
+                </div>
+                </div>
+              </div>
+            </div>
+
+  </main>
+
+  <!--================ Start Footer Area =================-->
+  <%- include('./partial/footer.ejs')%>
+  <!--================ End Footer Area =================-->
+
+
+  <script src="/vendors/jquery/jquery-3.2.1.min.js"></script>
+  <script src="/vendors/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="/vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script src="/js/jquery.ajaxchimp.min.js"></script>
+  <script src="/js/mail-script.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+      $(document).ready(function(){
+      $('#addP').click(function(){
+        $('#addPost').slideToggle();
+
+      })
+    })
+    </script>
+ 
+</body>
+</html>
