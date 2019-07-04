@@ -1,0 +1,167 @@
+<!DOCTYPE >
+<lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Remake Barber - Contact</title>
+	<link rel="icon" href="img/Fevicon.png" type="image/png">
+
+  <link rel="stylesheet" href="/vendors/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="/vendors/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="/vendors/themify-icons/themify-icons.css">
+  <link rel="stylesheet" href="/vendors/linericon/style.css">
+  <link rel="stylesheet" href="/vendors/owl-carousel/owl.theme.default.min.css">
+  <link rel="stylesheet" href="/vendors/owl-carousel/owl.carousel.min.css">
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!--================Header Menu Area =================-->
+<%- include('./partial/nav.ejs')%>
+  <!--================Header Menu Area =================-->
+  
+  <!--================ Hero sm banner start =================-->  
+  <section class="mb-30px">
+    <div class="container">
+      <div class="hero-banner hero-banner--sm">
+        <div class="hero-banner__content">
+          <h1>Contact Us</h1>
+          <nav aria-label="breadcrumb" class="banner-breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--================ Hero sm banner end =================-->  
+
+ <%# <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
+        
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title">HERE YOU CAN REGISTER</h2>
+                    <form method="POST"  action="/register" id="form1">
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="FullName" name="name" required>
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3 js-datepicker" type="text" placeholder="Birthdate" name="birthday" required>
+                            <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                        </div>
+                        
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="UserName" name="userName" required>
+                        </div>
+                     
+                        <div class="input-group">
+                            <input class="input--style-3" type="password" placeholder="Passowrd" minlength="8" name="passowrd" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="club" required >
+                                    <option disabled="disabled" selected="selected" >Your Favorite Club</option>
+                                    <option>Real Madrid</option>
+                                    <option>Barcelona</option>
+                                    <option>..Other</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="p-t-10">
+                            <button class="btn btn--pill btn--green" type="submit" name="submit" id="send_email" >Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>  %>
+
+
+
+<form class="text-center" style="color: #757575;" method ="POST" action = "/update">
+  <h1>Updating your Data </h1>
+  <br>
+    <div class="form-row">
+
+        <div class="col">
+            <!-- Fullname -->
+            <div class="md-form">
+                <input type="text" id="materialRegisterFormFirstName" name = "fullname" class="form-control">
+                <label for="materialRegisterFormFirstName">FullName </label>
+            </div>
+        </div>
+        <div class="col">
+            <!-- Birthday -->
+            <div class="md-form">
+                  <input class="form-control" type="text" placeholder="Birthdate" name="birthday" required>
+                  <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                  <label for="materialRegisterFormLastName">Birthdate</label>
+            </div>
+        </div>
+    </div>
+ <div class="col">
+            <!-- user name -->
+            <div class="md-form">
+                  <input class="form-control" type="text" placeholder="User Name" name="userName" required>
+                  <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                  <label for="materialRegisterFormLastName">User Name</label>
+            </div>
+        </div>
+
+    <!-- Password -->
+    <div class="md-form">
+        <input type="password" id="materialRegisterFormPassword" name = "passWord" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
+        <label for="materialRegisterFormPassword">Password</label>
+        <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+            At least 8 characters and 1 digit
+        </small>
+    </div>
+
+    <!-- Phone number -->
+    <div class="md-form">
+        <div class="input-group">
+            <select name="club" class="custom-select" required >
+              <option disabled="disabled" selected="selected" >Your Favorite Club</option>
+              <option>Real Madrid</option>
+              <option>Barcelona</option>
+              <option>..Other</option>
+            </select>
+       </div>
+    </div>
+
+    <!-- Sign up button -->
+    <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Update</button>
+
+
+
+
+  <!-- ================ contact section start ================= -->
+
+  
+
+
+        
+
+	<!-- ================ contact section end ================= -->
+
+  
+
+
+  <!--================ Start Footer Area =================-->
+
+  <!--================ End Footer Area =================-->
+
+  <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
+  <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script src="js/jquery.ajaxchimp.min.js"></script>
+  <script src="js/mail-script.js"></script>
+  <script src="js/main.js"></script>
+</body>
