@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title> Register Form</title>
+    <link rel="icon" href="img/logos/home-loge.jpeg" type="image/png">
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+    <!-- Icons font CSS-->
+    <link href="../..//vendor1/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="../..//vendor1/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- For navbar -->
+    <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="vendors/themify-icons/themify-icons.css">
+
+    <!-- vendor1 CSS-->
+    <link href="../..//vendor1/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="../..//vendor1/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/main.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+        <%- include('./partial/nav.ejs')%>
+
+    <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
+        
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title">HERE YOU CAN REGISTER</h2>
+                    <form method="POST"  action="/register" id="form1" data-parsley-validate="">
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="FullName" name="name" required>
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3 js-datepicker" type="text" placeholder="Birthdate" name="birthday" required>
+                            <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                        </div>
+                        <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="gender" required >
+                                    <option disabled="disabled" selected="selected" >Gender</option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Other</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="UserName" name="userName" required>
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="email" placeholder="Email"  id="to" name="email" required>
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="password" placeholder="Passowrd" minlength="8" name="passowrd" id="passowrd" required>
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="password" placeholder="Repassowrd" data-parsley-equalto="#passowrd" name="repassword" minlength="8" required>
+                       </div>
+                        <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="club" required >
+                                    <option disabled="disabled" selected="selected" >Your Favorite Club</option>
+                                    <option>Real Madrid</option>
+                                    <option>Barcelona</option>
+                                    <option>..Other</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="g-recaptcha" data-sitekey="6LeB3KkUAAAAAD2BSKPf6nFhjfLzgEQV_DQAfKz6
+      "></div><br>                        <div class="p-t-10">
+                            <button class="btn btn--pill btn--green" type="submit" name="submit" id="send_email" >Submit</button>
+                        </div>
+                        <div class="p-t-10">
+                                <div class="col-12">
+                                    <p>If you already have an account, Go and <a href="/signin" style="color: #57b846">Log In</a></p>
+                                    </div>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+    <script src="../..//vendor1/jquery/jquery.min.js"></script>
+    <!-- vendor1 JS-->
+    <script src="../..//vendor1/select2/select2.min.js"></script>
+    <script src="../..//vendor1/datepicker/moment.min.js"></script>
+    <script src="../..//vendor1/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="../..//js/global.js"></script>
+    <script src="../..//js/parsley.min.js"></script>
+
+
+  <script>
+    $(document).ready(function() {
+      $('#form1').submit(function() {
+        $(this).ajaxSubmit({
+          error: function(xhr) {
+            status('Error: ' + xhr.status);
+          },
+         success: function(response) {
+          console.log(response);
+         }
+        });
+        //Very important line, it disable the page refresh.
+        return false;
+      });
+    });
+  </script>
+  <script>
+  $(document).ready(function(){
+    var from,to,subject,text;
+    $("#send_email").click(function(){ 
+        $('#form1').parsley().validate()      
+        to=$("#to").val();      
+        $("#message").text("Sending E-mail...Please wait");
+        $.get("http://localhost:4000/register",{to:email},function(data){
+        if(data=="sent")
+        {
+            $("#message").empty().html("<p>Email is been sent at "+to+" . Please check inbox !</p>");
+        }
+
+});
+    });
+})
+</script>
+</body>
+
+</html>
+<!-- end document-->
