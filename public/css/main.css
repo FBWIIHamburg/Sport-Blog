@@ -3153,3 +3153,14 @@ a {
         padding-bottom: 45px;
       }
     }
+
+    /* parsley validation styles */
+.parsley-errors-list{
+      color:red;
+    }
+    .parsley-error{
+      border: solid 2px red;
+    }
+    .parsley-success{
+      border: solid 2px green;
+    }
