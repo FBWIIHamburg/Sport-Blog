@@ -95,7 +95,7 @@ function check (serverDbUrl, dbName, colName, val, callback) {
 function update (serverDbUrl, dbName, colName, val,val1, callback) {
     // asynic Function to make a connection to the Database
     (async function () {
-        let client;
+        let Client;
         try {
             //connecting to the Server
             Client = await MongoClient.connect(serverDbUrl, {
@@ -109,12 +109,15 @@ function update (serverDbUrl, dbName, colName, val,val1, callback) {
             const response = await col.updateOne(val,{$set:val1});
              //closeing the Connection
             //check the response
-           
+          //closeing the Connection
+            //check the response
+            
         } catch (error) {
             //calling back the error
             callback(error);
-        }
+        }        
         Client.close();
+
     }())
 }
 

@@ -9,7 +9,7 @@ const usersRouter = require('./src/routes/users');
 const registerRouter = require('./src/routes/register');
 const siginRouter = require('./src/routes/signin');
 const verificationRouter=require('./src/controllers/verification')
-
+const updateProfile =require('./src/routes/update')
 const app = express();
 
 // view engine setup
@@ -34,6 +34,8 @@ app.use('/verification', verificationRouter);
 
 app.use('/loged', logedRouter);
 app.use('/loged/users', usersRouter);
+
+app.use('/loged/updateProfile',updateProfile);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

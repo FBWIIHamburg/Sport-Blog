@@ -38,13 +38,12 @@ router.route('/').get( function(req, res,) {
             //!delete and update 
             databaseManger.update(conf.configMongoURI, conf.dbname, conf.collectionName, {
 verNum:Number(req.query.id)
+
             },{
                     verNum:"0000",
                     verfied:true,
-                    active:true
-               
-                
-                   
+                    active:true,
+                 
               }
               
               )
@@ -64,5 +63,6 @@ verNum:Number(req.query.id)
       })
 
 });
+
 
 module.exports=router

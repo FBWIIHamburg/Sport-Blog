@@ -26,7 +26,7 @@ router.get('/madrid/home/:user', function (req, res, next) {
                   getData.check(config.configMongoURI, 'blog', 'users', {userName: user}, (myUser) =>{
                         if(myUser){
                            res.render("userHome", {myUser, favClub, clubclass: 'real'});
-                   console.log(myUser);   
+                  //  console.log(myUser);   
                         }
                   
                   })
