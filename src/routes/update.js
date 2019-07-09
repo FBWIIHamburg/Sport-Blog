@@ -101,47 +101,47 @@ router.post('/madrid/:user', (req, res) => {
 
 
 //forgetting password
-router.post('/madrid/:user', (req, res) => {
+// router.post('/madrid/:user', (req, res) => {
 
-    getData.check(config.configMongoURI, 'home', 'render', {club: "Barcelona"}, (favClub) =>{
-        if(favClub){
-    const user = req.params.user;
-          getData.check(config.configMongoURI, 'blog', 'users', {userName: user}, (myUser) =>{
-              if(myUser.user===req.body.email){
-                  //res.render("updateProfile", {myUser, favClub, clubclass: 'barca'});
-                  //console.log(myUser);  
+//     getData.check(config.configMongoURI, 'home', 'render', {club: "Barcelona"}, (favClub) =>{
+//         if(favClub){
+//     const user = req.params.user;
+//           getData.check(config.configMongoURI, 'blog', 'users', {userName: user}, (myUser) =>{
+//               if(myUser.user===req.body.email){
+//                   //res.render("updateProfile", {myUser, favClub, clubclass: 'barca'});
+//                   //console.log(myUser);  
                   
-                  mailManager.sendEmail(req, (ok) => {
-                    if (ok == 0) {
-                      res.send("vernum not found ")
-                    } else if (!ok) {
-                      res.send("email error ")
-                    } else {
-                      //Done evrything
-                      //i should render home page with aler message to verifye email 
-                      res.send("ok");
-                    }
-                  })
-              }
+//                   mailManager.sendEmail(req, (ok) => {
+//                     if (ok == 0) {
+//                       res.send("vernum not found ")
+//                     } else if (!ok) {
+//                       res.send("email error ")
+//                     } else {
+//                       //Done evrything
+//                       //i should render home page with aler message to verifye email 
+//                       res.send("ok");
+//                     }
+//                   })
+//               }
                   
-          })
+//           })
        
-        }
+//         }
 
    
-//   ,(response)=>{
-//             if (response) {
-// res.send("done");
-//          }else{
+// //   ,(response)=>{
+// //             if (response) {
+// // res.send("done");
+// //          }else{
 
-// res.send(error.message)         
-//    }
-//         }
+// // res.send(error.message)         
+// //    }
+// //         }
         
     
-    res.send("huhuhu");
+//     res.send("huhuhu");
    
-});
-})
+// });
+// })
 
 module.exports = router
