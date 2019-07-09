@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 //const getData=require('../controllers/getData');
+const session = require('express-session');
 const datar = require('./register');
 const getData = require('../controllers/databaseManager')
 const config = require('../routes/mongoConfig')
@@ -9,14 +10,15 @@ const config = require('../routes/mongoConfig')
 router.use(express.json());
 router.use(express.urlencoded({ extended: false }));
 
-router.route('/').get(function (req, res, ) {
+// router.use(session({ secret: 'soccer' }));
 
+router.route('/').get(function (req, res) {
 
-
-  res.render('signin');
+  res.render('signin', {navlogo: 'img/logos/logo-title-min.jpeg'});
 });
 
 router.route('/').post((req, res) => {
+  // req.session.sportSession = true
   getData.check(config.configMongoURI, config.dbname, config.collectionName, {
     userName: req.body.userName,
 
@@ -29,17 +31,17 @@ router.route('/').post((req, res) => {
         req.body.passowrd === response.passowrd &&
         response.verfied === true &&
         response.active === true) {
-        if (response.favoriteClub === "real") {
+        if (response.favoriteClub === "Real Madrid") {
           if (response.admin === true) {
-            res.send("welcome madride admin")
+            res.send("welcome madrid admin")
           } else {
-            res.send("welcome madride user")
+            res.redirect("/loged/madrid/home/"+response.userName);
           }
-        } else if (response.favoriteClub === "barce") {
+        } else if (response.favoriteClub === "Barcelona") {
           if (response.admin === true) {
             res.send("welcome barce admin")
           } else {
-            res.send("welcome barce user")
+            res.redirect("/loged/barca/home/"+response.userName)
           }
 
         } else {

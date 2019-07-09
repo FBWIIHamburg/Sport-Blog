@@ -7,7 +7,7 @@ const {MongoClient,ObjectID} = require('mongodb');
 
 
 /**
- * This Function  is For Inserting the Data to Database
+ * This Function  is For Finding the Data in The Database
  * @param {*} serverDbUrl as a String Value
  * @param {*} dbName as a String Value
  * @param {*} colName as a String Value
@@ -26,7 +26,7 @@ function check (serverDbUrl, dbName, colName, val, callback) {
             const db = await Client.db(dbName);
             //connecting to collection
             const col = await db.collection(colName);
-            //connecting to the Value
+            //Finding the Value
             const response = await col.findOne(val);
 
             Client.close(); //closeing the Connection
@@ -83,7 +83,7 @@ function check (serverDbUrl, dbName, colName, val, callback) {
 }
 
 /**
- * This Function  is For Inserting the Data to Database
+ * This Function  is For Updating the Data in Database
  * @param {*} serverDbUrl as a String Value
  * @param {*} dbName as a String Value
  * @param {*} colName as a String Value
@@ -105,7 +105,7 @@ function update (serverDbUrl, dbName, colName, val,val1, callback) {
             const db = await Client.db(dbName);
             //connecting to collection
             const col = await db.collection(colName);
-            //connecting to the Value
+            //Update the Value
             const response = await col.updateOne(val,{$set:val1});
              //closeing the Connection
             //check the response

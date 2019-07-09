@@ -11,30 +11,41 @@
 
     <!-- Title Page-->
     <title> Register Form</title>
+    <link rel="icon" href="img/logos/home-loge.jpeg" type="image/png">
+
     <script src='https://www.google.com/recaptcha/api.js'></script>
 
     <!-- Icons font CSS-->
     <link href="../..//vendor1/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <link href="../..//vendor1/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+
     <!-- Font special for pages-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- For navbar -->
+    <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="vendors/themify-icons/themify-icons.css">
 
     <!-- vendor1 CSS-->
     <link href="../..//vendor1/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="../..//vendor1/datepicker/daterangepicker.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
-    <link href="../..//css/main.css" rel="stylesheet" media="all">
+    <link href="css/main.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <a href="/">Home</a>
+        <%- include('./partial/nav.ejs')%>
+
     <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
+        
         <div class="wrapper wrapper--w780">
             <div class="card card-3">
                 <div class="card-heading"></div>
                 <div class="card-body">
-                    <h2 class="title">Registration Info</h2>
+                    <h2 class="title">HERE YOU CAN REGISTER</h2>
                     <form method="POST"  action="/register" id="form1" data-parsley-validate="">
                         <div class="input-group">
                             <input class="input--style-3" type="text" placeholder="FullName" name="name" required>
@@ -65,14 +76,14 @@
                         </div>
                         <div class="input-group">
                             <input class="input--style-3" type="password" placeholder="Repassowrd" data-parsley-equalto="#passowrd" name="repassword" minlength="8" required>
-                        </div>
+                       </div>
                         <div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
                                 <select name="club" required >
-                                    <option disabled="disabled" selected="selected" >Club</option>
-                                    <option>real</option>
-                                    <option>barce</option>
-                                    <option>Other</option>
+                                    <option disabled="disabled" selected="selected" >Your Favorite Club</option>
+                                    <option>Real Madrid</option>
+                                    <option>Barcelona</option>
+                                    <option>..Other</option>
                                 </select>
                                 <div class="select-dropdown"></div>
                             </div>
@@ -81,6 +92,11 @@
       "></div><br>                        <div class="p-t-10">
                             <button class="btn btn--pill btn--green" type="submit" name="submit" id="send_email" >Submit</button>
                         </div>
+                        <div class="p-t-10">
+                                <div class="col-12">
+                                    <p>If you already have an account, Go and <a href="/signin" style="color: #57b846">Log In</a></p>
+                                    </div>
+                            </div>
                     </form>
                 </div>
             </div>
@@ -98,9 +114,9 @@
 
     <!-- Main JS-->
     <script src="../..//js/global.js"></script>
-        <script src="../..//js/parsley.min.js"></script>
+    <script src="../..//js/parsley.min.js"></script>
 
-    
+
   <script>
     $(document).ready(function() {
       $('#form1').submit(function() {
@@ -120,8 +136,8 @@
   <script>
   $(document).ready(function(){
     var from,to,subject,text;
-    $("#send_email").click(function(){    
-         $('#form1').parsley().validate()  
+    $("#send_email").click(function(){ 
+        $('#form1').parsley().validate()      
         to=$("#to").val();      
         $("#message").text("Sending E-mail...Please wait");
         $.get("http://localhost:4000/register",{to:email},function(data){
@@ -132,16 +148,6 @@
 
 });
     });
-//     $(function () {
-//  .on('field:validated', function() {
-//     var ok = $('.parsley-error').length === 0;
-//     $('.bs-callout-info').toggleClass('hidden', !ok);
-//     $('.bs-callout-warning').toggleClass('hidden', ok);
-//   })
-//   .on('form:submit', function() {
-//     return false; // Don't submit form for this demo
-//   });
-//  });
 })
 </script>
 </body>

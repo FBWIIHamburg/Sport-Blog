@@ -13,7 +13,7 @@ const notRobot = require('../controllers/notRobot')
 const mailManager = require('../controllers/sendEmail')
 /* GET register page. */
 router.get('/', function (req, res, next) {
-  res.render("register");
+  res.render("register",  {navlogo: 'img/logos/logo-title-min.jpeg'});
 });
 
 
