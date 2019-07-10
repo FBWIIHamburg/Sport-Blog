@@ -100,7 +100,7 @@ router.post('/madrid/:user', (req, res) => {
 
 
 
-//forgetting password
+//forgetting password asda
 // router.post('/madrid/:user', (req, res) => {
 
 //     getData.check(config.configMongoURI, 'home', 'render', {club: "Barcelona"}, (favClub) =>{
