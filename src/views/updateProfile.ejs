@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><%= favClub.club %> Blog - Home</title>
+	<link rel="icon" href="/<%= favClub.logo %>" type="image/png" style="height: 100px;">
+
+  <link rel="stylesheet" href="/vendors/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="/vendors/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="/vendors/themify-icons/themify-icons.css">
+  <link rel="stylesheet" href="/vendors/linericon/style.css">
+  <link rel="stylesheet" href="/vendors/owl-carousel/owl.theme.default.min.css">
+  <link rel="stylesheet" href="/vendors/owl-carousel/owl.carousel.min.css">
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!--================Header Menu Area =================-->
+<header class="header_area">
+      <div class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container box_1620">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <a class="navbar-brand logo_h" href="/"><img src="/" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" ']]'''aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse " id="navbarSupportedContent" style="position: relative;">
+              <ul class="nav navbar-nav menu_nav justify-content-center">
+                <li class="nav-item active"><a class="nav-link" href="/">Home</a></li> 
+                <li class="nav-item"><a class="nav-link" href="/register">Category</a>
+                <li class="nav-item"><a class="nav-link" href="/register">Contact</a></li>
+              </ul>
+  
+              <ul class=" nav navbar-nav navbar-right navbar-social center" style="right: 1rem;position: absolute;">
+                <li><a href="#"><i class="ti-facebook "></i></a></li>
+                <li><a href="#"><i class="ti-twitter-alt "></i></a></li>
+                <li><a href="#"><i class="ti-instagram "></i></a></li>
+                <li><a href="#"><i class="ti-skype "></i></a></li>
+              </ul>
+  
+              <span class="nav-item" style="z-index: 1000;"><a class="blog__slide__label " href="/signin" style="width: 160px; text-align:center;">log out</a></span>
+  
+            </div> 
+          </div>
+        </nav>
+      </div>
+    </header>
+
+          <main class="site-main">
+
+                  <form method="POST" action="/loged/updateProfile<%= favClub.navPath%>/<%= myUser.userName%>" class="p-5 bg-white" id="addPost">
+                  <div class="row form-group">
+    
+                    <div class="col-md-12 ">
+                      <h1 style="text-align: center;"> Update Data</h1>
+                    </div>
+      
+                  </div>
+    
+                  <br>
+                  <div class="row form-group" >
+    
+                    <div class="col-md-12">
+                      <label class="text-black" for="title">Fullname</label>
+                      <input type="text" id="title" name="fullname" class="form-control" value="<%=myUser.name%>">
+                    </div>
+    
+                    <div class="col-md-12">
+                      <label class="text-black" for="club">Birthdate<br>
+                      </label>
+                      <input type="text" id="club" name="birthdate" class="form-control" value="<%=myUser.birthDate%>">
+                    </div>
+    
+                    <div class="col-md-12">
+                      <label class="text-black" for="keyword">User Name</label>
+                      <input type="text" id="club" name="username" class="form-control" value="<%=myUser.userName%>">
+                    </div>
+    
+                    <div class="col-md-12">
+                        <label class="text-black" for="category">Club</label>
+                      <select  id="category" name="favclub" class="form-control">
+                         <option disabled="disabled" selected="selected" ><%=myUser.favoriteClub%></option>
+                                    <% if (myUser.favoriteClub==='Barcelona'){%>
+                                    <option value= "Real Madrid">Real Madrid</option>
+                                    <option value= "Barcelona">Barcelona</option>
+                                    <option value ="..Other">..Other</option>
+                                    <%}
+                                    else{%>
+                                    <option value= "Real Madrid">Real Madrid</option>                          
+                                    <option value= "Barcelona">Barcelona</option>
+                                    <option value ="..Other">..Other</option>
+                                     <%}%>
+                      </select>
+                    </div>
+       
+    
+                    <br>
+                    <br>
+         
+                  </div>
+                  <div class="col-md-12">
+                    <button type="submit" class="nav-item blog__slide__label">Update</button>
+                  </div>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <div class="row form-group">
+                    <div class="col-12">
+                      <pre>Do you have a problem? <a href="/" style="color: '<%= favClub.color %>';">  Contact the customer service</a></pre>
+                    </div>
+                  </div>
+                </form>
+            
+                  
+  </main>
+
+  <!--================ Start Footer Area =================-->
+  <%- include('./partial/footer.ejs')%>
+  <!--================ End Footer Area =================-->
+
+
+  <script src="/vendors/jquery/jquery-3.2.1.min.js"></script>
+  <script src="/vendors/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="/vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script src="/js/jquery.ajaxchimp.min.js"></script>
+  <script src="/js/mail-script.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+      $(document).ready(function(){
+      $('#addP').click(function(){
+        $('#addPost').slideToggle();
+      })
+    })
+    </script>
+ 
+</body>
+</html>
